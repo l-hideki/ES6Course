@@ -11,6 +11,6 @@
   },
   "scripts": {
     "dev": "babel ./main.js -o ./bundle.js -w",
-    "ex":"babel ./src-desafio/Ex2.js -o ./bundle.js -w"
+    "ex":"babel ./src-desafio/Ex3.js -o ./bundle.js -w"
   }
 }
