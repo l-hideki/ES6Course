@@ -1,166 +1,70 @@
 "use strict";
 
-/*  Classes Hoje podem ser utilizadas no JS, Babel traduz no arquivo bundle.js
-    class List {
-    constructor() {
-        this.data = [];
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+//Antes de aplicar ver o resultado do exercício é necessário atualizar o script no package.json
+var Usuario = /*#__PURE__*/function () {
+  function Usuario(email, senha) {
+    _classCallCheck(this, Usuario);
+
+    this.email = email;
+    this.senha = senha;
+  }
+
+  _createClass(Usuario, [{
+    key: "isAdmin",
+    value: function isAdmin() {
+      return this.admin === true;
     }
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
-    }
-}
+  }]);
 
-HERANÇA
-class TodoList extends List { 
-    constructor() {
-        super();    //SUPER CHAMA O CONSTRUTOR DA CLASSE PAI
-        this.usuario = 'Diego';
-    }
-    mostraUsuario() {
-        console.log(this.usuario);
-    }
+  return Usuario;
+}();
 
-}
+;
 
-const minhaLista = new TodoList();
-document.getElementById('novotodo').onclick = function () {
-    minhaLista.add('Novo todo');
-    minhaLista.mostraUsuario();
-}  */
-//-----------------------------//
-//Metodos static - Não precisam de um "NEW"
+var Admin = /*#__PURE__*/function (_Usuario) {
+  _inherits(Admin, _Usuario);
 
-/* class TodoList {
-    constructor() {
-        this.todos = [];
-    }
+  var _super = _createSuper(Admin);
 
-    static addTodo() { //Metodos estáticos não recebem o "THIS" não enxergam o resto da classe
-        this.todos.push('Novo todo');
-        console.log(this.todos);
-    }
-}
+  function Admin() {
+    var _this;
 
-TodoList.addTodo();
- */
-//Logo isso não funcionaria
-//-----------------------------//
-//Utilização exemplo:
+    _classCallCheck(this, Admin);
 
-/* class Matematica {
-    static soma(a, b) {
-        return a + b;
-    }
-}
+    _this = _super.call(this); //SUPER CHAMA O CONSTRUTOR DA CLASSE PAI
 
-console.log(Matematica.soma(1, 2)) */
-//-----------------------------//
-//OPERAÇÕES EM ARRAY
+    _this.admin = true;
+    return _this;
+  }
 
-/* 
-const arr = [1,3,4,5,8,9];
-const newArr = arr.map((item,index) => { //MAP percorre todo o vetor
-    return item + index;
-});
+  return Admin;
+}(Usuario);
 
-const sum  = arr.reduce((total,next)=>{
-    return total+next;
-});
+;
+var User1 = new Usuario('email@teste.com', 'senha123');
+var Adm1 = new Admin('email@teste.com', 'senha123');
+console.log(User1.isAdmin()); // false
 
-const filter = arr.filter((item)=>{
-    return item % 2 === 0;
-})
-
-const find = arr.find((item)=>{
-    return item === 4;
-})
-
-console.log(sum);
-console.log(newArr);
-console.log(filter);
-console.log(find); */
-//-----------------------------//
-//Valores padrão para JS
-
-/* const soma = (a=3,b=6)=>a+b;
-
-console.log(soma(1));
-console.log(soma()); */
-//-----------------------------//
-//Desestruturação
-
-/* const usuario = {
-    nome: 'Diego',
-    idade: 23,
-    endereco: {
-        cidade: 'Rio do Sul',
-        estado: 'SC',
-    },
-}
-
-function mostraNome({ nome, idade }) {
-    console.log(nome, idade);
-}
-
-mostraNome(usuario); */
-//-----------------------------//
-//Operadores REST/SPREAD
-//REST - PEGA O RESTO DAS PROPRIEDADES
-
-/* 
-const usuario = {
-    nome: 'Diego',
-    idade: 23,
-    empresa: 'Rocketseat'
-};
-
-const { nome, ...resto } = usuario
-
-console.log(nome);
-console.log(resto);
-
-function soma(...params) {
-    return params.reduce((total, next) => total + next);
-}
-
-console.log(soma(1, 3, 4));
- */
-//SPREAD OPERATOR
-
-/* const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-
-const arr3 = [...arr1, ...arr2];
-console.log(arr3);
-
-
-const usuario1 = {
-    nome: 'Diego',
-    idade: 23,
-    empresa: 'Rocketseat',
-};
-
-const usuario2 = { ...usuario1, nome: 'Gabriel' };
-
-console.log(usuario2);
- */
-//-----------------------------//
-//TEMPLATE LITERALS
-
-/* const nome = "Diego";
-const idade = 23;
-
-console.log('Meu nome é ' + nome + ' e tenho ' + idade + 'anos'); 
-console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
- */
-//-----------------------------//
-//OBJECT SHORT SYNTAX
-var nome = "Diego";
-var idade = 23;
-var usuario = {
-  nome: nome,
-  idade: idade,
-  empresa: 'Rocketseat'
-};
-console.log(usuario);
+console.log(Adm1.isAdmin()); // true
