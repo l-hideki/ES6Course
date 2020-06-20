@@ -1,6 +1,4 @@
 /*  Classes Hoje podem ser utilizadas no JS, Babel traduz no arquivo bundle.js
-
-
     class List {
     constructor() {
         this.data = [];
@@ -54,10 +52,36 @@ TodoList.addTodo();
 //----------------------------//
 
 //Utilização exemplo:
-class Matematica {
+/* class Matematica {
     static soma(a, b) {
         return a + b;
     }
 }
 
-console.log(Matematica.soma(1, 2))// 
+console.log(Matematica.soma(1, 2)) */
+
+//--------------------------------//
+
+//OPERAÇÕES EM ARRAY
+/* 
+const arr = [1,3,4,5,8,9];
+const newArr = arr.map((item,index) => { //MAP percorre todo o vetor
+    return item + index;
+});
+
+const sum  = arr.reduce((total,next)=>{
+    return total+next;
+});
+
+const filter = arr.filter((item)=>{
+    return item % 2 === 0;
+})
+
+const find = arr.find((item)=>{
+    return item === 4;
+})
+
+console.log(sum);
+console.log(newArr);
+console.log(filter);
+console.log(find); */
