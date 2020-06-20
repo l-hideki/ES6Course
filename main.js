@@ -27,7 +27,7 @@ document.getElementById('novotodo').onclick = function () {
     minhaLista.mostraUsuario();
 }  */
 
-//------------------------//
+//-----------------------------//
 
 //Metodos static - Não precisam de um "NEW"
 
@@ -49,7 +49,7 @@ TodoList.addTodo();
 
 
 
-//----------------------------//
+//-----------------------------//
 
 //Utilização exemplo:
 /* class Matematica {
@@ -60,7 +60,7 @@ TodoList.addTodo();
 
 console.log(Matematica.soma(1, 2)) */
 
-//--------------------------------//
+//-----------------------------//
 
 //OPERAÇÕES EM ARRAY
 /* 
@@ -85,3 +85,97 @@ console.log(sum);
 console.log(newArr);
 console.log(filter);
 console.log(find); */
+
+//-----------------------------//
+
+//Valores padrão para JS
+/* const soma = (a=3,b=6)=>a+b;
+
+console.log(soma(1));
+console.log(soma()); */
+
+//-----------------------------//
+
+//Desestruturação
+/* const usuario = {
+    nome: 'Diego',
+    idade: 23,
+    endereco: {
+        cidade: 'Rio do Sul',
+        estado: 'SC',
+    },
+}
+
+function mostraNome({ nome, idade }) {
+    console.log(nome, idade);
+}
+
+mostraNome(usuario); */
+
+//-----------------------------//
+
+//Operadores REST/SPREAD
+//REST - PEGA O RESTO DAS PROPRIEDADES
+/* 
+const usuario = {
+    nome: 'Diego',
+    idade: 23,
+    empresa: 'Rocketseat'
+};
+
+const { nome, ...resto } = usuario
+
+console.log(nome);
+console.log(resto);
+
+function soma(...params) {
+    return params.reduce((total, next) => total + next);
+}
+
+console.log(soma(1, 3, 4));
+ */
+
+
+//SPREAD OPERATOR
+/* const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+
+const usuario1 = {
+    nome: 'Diego',
+    idade: 23,
+    empresa: 'Rocketseat',
+};
+
+const usuario2 = { ...usuario1, nome: 'Gabriel' };
+
+console.log(usuario2);
+ */
+
+//-----------------------------//
+
+//TEMPLATE LITERALS
+/* const nome = "Diego";
+const idade = 23;
+
+console.log('Meu nome é ' + nome + ' e tenho ' + idade + 'anos'); 
+console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
+ */
+
+ //-----------------------------//
+
+ //OBJECT SHORT SYNTAX
+
+ const nome ="Diego"
+ const idade = 23
+
+ const usuario={
+     nome,
+     idade,
+     empresa:'Rocketseat'
+ };
+
+ console.log(usuario);
