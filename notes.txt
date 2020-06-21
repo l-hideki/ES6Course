@@ -1,0 +1,3 @@
+O WEBPACK gera um bundle.js sem que necessariamente exista um arquivo no diretorio.
+roda tipo um "live server"
+

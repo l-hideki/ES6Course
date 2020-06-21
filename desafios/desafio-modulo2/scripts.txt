@@ -1,0 +1,26 @@
+
+//MODULO WEBPACK
+import soma, { sub } from '../funcoes';
+import somaFunction from './soma'; //Export Default
+
+console.log(soma(1, 2));
+console.log(sub(3, 2));
+
+//-------------//
+
+Desafio, aplicado no main.js
+
+//1.1
+import ClasseUsuario from '../desafios/desafio-modulo2/functions';
+
+console.log(ClasseUsuario.info()) */
+
+//1.2
+import { idade } from '../desafios/desafio-modulo2/functions';
+console.log(idade);
+
+//1.3
+import defaultUsuario, { idade as IdadeUsuario } from '../desafios/desafio-modulo2/functions';
+
+
+
