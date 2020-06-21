@@ -1,0 +1,40 @@
+copiar em main.js
+
+const minhaPromise = () => new Promise((resolve, reject) => {
+    setTimeout(() => { resolve('ok') }, 5000)
+});
+
+//minhaPromise().then(response=>...)
+
+async function executaPromise(){ 
+    console.log(await minhaPromise()); 
+    console.log(await minhaPromise());//A segunda linha só executa após a primeira
+    console.log(await minhaPromise());
+//minhaPromise().then(response=>{console.log(response);})
+//Await só pode ser utilizado dentro de uma function sync
+
+}
+
+
+
+executaPromise();
+
+
+
+//----------------//
+import axios from 'axios'
+
+class Api {
+
+    static async getUserInformation(username) {
+        try {
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        }
+        catch (err) {
+            console.warn('Erro na Api')
+        }
+    }
+}
+
+Api.getUserInformation('l-hideki');

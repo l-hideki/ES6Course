@@ -1,3 +1,4 @@
+copiar em main.js
 
 //MODULO WEBPACK
 import soma, { sub } from '../funcoes';

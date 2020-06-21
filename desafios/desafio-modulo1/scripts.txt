@@ -1,3 +1,5 @@
+copiar no main.js
+
 //Classes Hoje podem ser utilizadas no Javascripts Babel traduz no arquivo bundle.js
 
 class List {
