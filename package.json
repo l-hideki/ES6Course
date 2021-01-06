@@ -20,6 +20,6 @@
     "ex": "babel ./src-desafio/Ex7.js -o ./bundle.js -w"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   }
 }
